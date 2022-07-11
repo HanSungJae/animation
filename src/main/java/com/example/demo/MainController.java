@@ -24,7 +24,11 @@ public class MainController {
     public String mylikes(){
         return "mylikes";
     }
-
+    
+    @GetMapping("/mylikes2")
+    public String mylikes2(){
+        return "mylikes";
+    }
     @GetMapping("/mypage")
     public String mypage(){
         return "mypage";
