@@ -19,7 +19,6 @@ public class MainController {
     public String mywork(){
         return "mywork";
     }
-
     @GetMapping("/mylikes")
     public String mylikes(){
         return "mylikes";
