@@ -1,17 +1,20 @@
 package com.example.demo;
 
+import com.example.demo.service.ArticleService;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class MainController {
 
+    private final ArticleService articleService;
     @GetMapping("/hello")
     public String getMain(Model model){
-        //model.addAttribute("info", )
+        model.addAttribute("info", articleService.getArticles());
         return "index";
     }
 
