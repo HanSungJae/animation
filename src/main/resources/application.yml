@@ -1,6 +1,19 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/db_project?useSSL=false&characterEncoding=utf8&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://127.0.0.1:3306/animation?useSSL=false&characterEncoding=utf8&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
     username: root
     password: hhants8092
+
+
+mybatis:
+  type-aliases-package: com.example.demo.dto
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+logging:
+  level:
+      com.example.demo.mapper: debug

@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class ArticleService {
 
-    ArticleMapper articleMapper;
+    private final ArticleMapper articleMapper;
     public ArticleService(ArticleMapper articleMapper){
         this.articleMapper = articleMapper;
     }
@@ -17,5 +17,5 @@ public class ArticleService {
     public List<Article> getArticles(){
         return articleMapper.findArticles();
     }
-
+    public List<Article> getAnimation(){return articleMapper.findAniArticles();}
 }

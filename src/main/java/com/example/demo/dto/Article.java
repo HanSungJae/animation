@@ -1,8 +1,15 @@
 package com.example.demo.dto;
 
+import lombok.*;
+
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
 public class Article {
     private int id;
     private String userId;
+    private String title;
     private String files;
     private String description;
     private int type;

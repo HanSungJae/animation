@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import com.example.demo.service.ArticleService;
 import lombok.NoArgsConstructor;
@@ -15,6 +15,7 @@ public class MainController {
     @GetMapping("/hello")
     public String getMain(Model model){
         model.addAttribute("info", articleService.getArticles());
+        model.addAttribute("ani", articleService.getAnimation());
         return "index";
     }
 
@@ -26,7 +27,7 @@ public class MainController {
     public String mylikes(){
         return "mylikes";
     }
-    
+
     @GetMapping("/login")
     public String login(){
         return "login";

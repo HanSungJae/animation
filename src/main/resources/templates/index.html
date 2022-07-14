@@ -101,6 +101,7 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-6">
                     <div class="right-content">
                         <div class="row">
+
                             <div class="col-lg-6">
                                 <div class="right-first-image">
                                     <div class="thumb">
@@ -190,7 +191,7 @@ https://templatemo.com/tm-571-hexashop
     <!-- ***** Main Banner Area End ***** -->
 
     <!-- ***** Men Area Starts ***** -->
-    <section class="section" id="best">
+    <section class="section" id="best" style="padding-top: 22px; padding-bottom: 22px">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -206,38 +207,18 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
-                            <div class="item">
+                            <div class="item" th:each="e : ${info}">
                                 <div class="thumb">
                                     <img src="../assets/new_img/top1.gif" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>City fighter</h4>
-                                    <span>by heysun</span><p>
-                                    <span>2.1 K likes</span>
+                                    <h4 th:text="${e.title}"></h4>
+                                    <span th:text="${e.userId}"></span><p>
+                                    <span th:text="${e.likeCount}"></span>likes
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <img src="../assets/new_img/top2.gif" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Dreams</h4>
-                                    <span>by howdoyouanimate</span><p>
-                                    <span>1.8 K likes</span>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <img src="../assets/new_img/top3.gif" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>No Name</h4>
-                                    <span>by .</span><p>
-                                    <span>1.7 K likes</span>
-                                </div>
-                            </div>
-                            <p>
                         </div>
+                        <button type="button" onclick="location.href='/best'" style="margin-top: 10px">View more</button>
                     </div>
                 </div>
             </div>
@@ -262,7 +243,7 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="women-item-carousel">
                         <div class="owl-women-item owl-carousel">
-                            <div class="item">
+                            <div class="item"  th:each="e : ${ani}">
                                 <div class="thumb">
                                     <img src="../assets/new_img/ani1.gif" alt="">
                                 </div>
@@ -272,7 +253,7 @@ https://templatemo.com/tm-571-hexashop
                                     <span>1230 likes</span>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item" th:each="e : ${ani}">
                                 <div class="thumb">
                                     <img src="../assets/new_img/ani2.gif" alt="">
                                 </div>
@@ -282,7 +263,7 @@ https://templatemo.com/tm-571-hexashop
                                     <span>by newbie</span>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item" th:each="e : ${ani}">
                                 <div class="thumb">
                                     <img src="../assets/new_img/ani3.gif" alt="">
                                 </div>

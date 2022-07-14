@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Mapper
-@Repository
 public interface ArticleMapper {
     List<Article> findArticles();
+    List<Article> findAniArticles();
 }
