@@ -11,4 +11,6 @@ import java.util.List;
 public interface ArticleMapper {
     List<Article> findArticles();
     List<Article> findAniArticles();
+
+    List<Article> findTop6Articles();
 }

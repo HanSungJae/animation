@@ -10,5 +10,8 @@
     <select id="findAniArticles" resultType="Article">
         SELECT *  FROM article where type = 2;
     </select>
+    <select id="findTop6Articles" resultType="Article">
+        SELECT * FROM article order by like_count DESC LIMIT 6;
+    </select>
 <!--    id, userId, files, description, type, like_count, created_at, updated_at, deleted_at-->
 </mapper>
