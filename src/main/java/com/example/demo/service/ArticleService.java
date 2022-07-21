@@ -20,4 +20,6 @@ public class ArticleService {
     public List<Article> getAnimation(){return articleMapper.findAniArticles();}
 
     public List<Article> getTop6Articles(){return articleMapper.findTop6Articles();}
+
+
 }

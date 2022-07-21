@@ -83,7 +83,25 @@ public class MainController {
     }
 
     @GetMapping("/animation")
-    public String animation(){
+    public String animation(Model model){
+            List<Article> AniArticles = articleService.getAnimation();
+            JSONParser parser = new JSONParser();
+
+            for(int i=0; i<AniArticles.size(); i++){
+                String files =  AniArticles.get(i).getFiles();
+                JSONArray parsedJsonArray = null;
+                try {
+                    parsedJsonArray = (JSONArray) parser.parse(files);
+                    for (Object o: parsedJsonArray){
+                        JSONObject jo = (JSONObject) o;
+                        String sub_url = (String) jo.get("file_url");
+                        AniArticles.get(i).setSumImg(sub_url);
+                    }
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        model.addAttribute("aniArticle", articleService.getAnimation());
         return "animation";
     }
 

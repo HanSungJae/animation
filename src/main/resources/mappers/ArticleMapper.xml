@@ -8,7 +8,7 @@
         SELECT *  FROM article
     </select>
     <select id="findAniArticles" resultType="Article">
-        SELECT *  FROM article where type = 2;
+        SELECT *  FROM article where type = 1;
     </select>
     <select id="findTop6Articles" resultType="Article">
         SELECT * FROM article order by like_count DESC LIMIT 6;
