@@ -10,6 +10,7 @@ import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +58,6 @@ public class MainController {
                 for (Object o: parsedJsonArray){
                     JSONObject jo = (JSONObject) o;
                     String sub_url = (String) jo.get("file_url");
-                    top6.get(i).setSumImg(sub_url);
                 }
             } catch (ParseException e) {
                 throw new RuntimeException(e);
@@ -84,30 +84,39 @@ public class MainController {
 
     @GetMapping("/animation")
     public String animation(Model model){
-            List<Article> AniArticles = articleService.getAnimation();
-            JSONParser parser = new JSONParser();
-
-            for(int i=0; i<AniArticles.size(); i++){
-                String files =  AniArticles.get(i).getFiles();
-                JSONArray parsedJsonArray = null;
-                try {
-                    parsedJsonArray = (JSONArray) parser.parse(files);
-                    for (Object o: parsedJsonArray){
-                        JSONObject jo = (JSONObject) o;
-                        String sub_url = (String) jo.get("file_url");
-                        AniArticles.get(i).setSumImg(sub_url);
-                    }
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        model.addAttribute("aniArticle", articleService.getAnimation());
+        List<Article> AniArticles = articleService.getAnimation();
+        model.addAttribute("aniArticle", AniArticles);
         return "animation";
     }
 
     @GetMapping("/emoji")
     public String emoji(){
         return "emoji";
+    }
+
+    @GetMapping("/article")
+    public String article(@RequestParam(value="articleId") int articleId, Model model){
+        Article info = articleService.getArticle(articleId);
+
+        ArrayList<String> resultImages = new ArrayList<>();
+        String images = info.getFiles();
+        JSONParser parser = new JSONParser();
+
+        JSONArray parsedJsonArray = null;
+        try {
+            parsedJsonArray = (JSONArray) parser.parse(images);
+            for (Object o: parsedJsonArray){
+                JSONObject jo = (JSONObject) o;
+                String sub_url = (String) jo.get("file_url");
+                resultImages.add(sub_url);
+            }
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        model.addAttribute("articleImages",resultImages);
+        model.addAttribute("articleInfo", info);
+        return "detail";
     }
 
 

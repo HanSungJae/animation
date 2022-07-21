@@ -8,10 +8,13 @@
         SELECT *  FROM article
     </select>
     <select id="findAniArticles" resultType="Article">
-        SELECT *  FROM article where type = 1;
+        SELECT *  FROM article where type = 1 order by created_at DESC;
     </select>
     <select id="findTop6Articles" resultType="Article">
         SELECT * FROM article order by like_count DESC LIMIT 6;
+    </select>
+    <select id="getArticle" resultType="Article">
+        select * from article where id = #{articleId}
     </select>
 <!--    id, userId, files, description, type, like_count, created_at, updated_at, deleted_at-->
 </mapper>

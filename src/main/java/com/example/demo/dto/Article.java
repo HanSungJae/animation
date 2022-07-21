@@ -19,5 +19,5 @@ public class Article {
     private String updatedAt;
     private String deletedAt;
 
-    private String sumImg;
+    private String thumbnail;
 }

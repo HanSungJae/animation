@@ -21,5 +21,8 @@ public class ArticleService {
 
     public List<Article> getTop6Articles(){return articleMapper.findTop6Articles();}
 
+    public Article getArticle(int articleId){
+        return articleMapper.getArticle(articleId);
+    }
 
 }
