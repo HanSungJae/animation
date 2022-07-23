@@ -108,12 +108,12 @@
             <div class="col-lg-6">
                 <div class="right-content">
                     <ul style="float: right"><li><a href="#"><i class="fa fa-heart-o"></i></a></li></ul>
-                    <h4>#1</h4>
+                    <span th:text="${article.createdAt}"></span>
                     <a th:href="@{/article(articleId=${article.id})}">
                         <h4 th:text="${article.title}"></h4>
                     </a>
                     <span th:text="${article.userId}"></span>
-                    <span th:text="${article.likeCount}"> likes</span>
+                    <span th:text="${article.likeCount}"></span>likes
 
                     <ul>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>

@@ -12,6 +12,8 @@ import java.util.List;
 public interface ArticleMapper {
     List<Article> findArticles();
     List<Article> findAniArticles();
+
+    List<Article> findEmojiArticles();
     List<Article> findTop6Articles();
 
     Article getArticle(@Param("articleId") int articleId);

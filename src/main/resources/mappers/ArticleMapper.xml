@@ -10,6 +10,9 @@
     <select id="findAniArticles" resultType="Article">
         SELECT *  FROM article where type = 1 order by created_at DESC;
     </select>
+    <select id="findEmojiArticles" resultType="Article">
+        SELECT *  FROM article where type = 2 order by created_at DESC;
+    </select>
     <select id="findTop6Articles" resultType="Article">
         SELECT * FROM article order by like_count DESC LIMIT 6;
     </select>

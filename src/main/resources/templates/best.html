@@ -111,7 +111,7 @@ https://templatemo.com/tm-571-hexashop
                         <h4>#1</h4>
                         <h4 th:text="${article.title}"></h4>
                         <span th:text="${article.userId}"></span>
-                        <span th:text="${article.likeCount}"> likes</span>
+                        <span th:text="${article.likeCount}"></span>likes
 
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -148,15 +148,17 @@ https://templatemo.com/tm-571-hexashop
                                     </ul>
                                 </div>
                             </div>
-                            <img src="assets/new_img/top4.gif">
+                            <img th:src="${article.thumbnail}" alt="">
                         </div>
                         <div class="down-content">
                             <h4 th:text="${article.title}"></h4>
                             <span th:text="${article.userId}"></span>
-                            <span th:text="${article.likeCount}"</span>><p>likes</p>
+                            <span th:text="${article.likeCount}"></span><p>likes</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
     <!-- ***** Our Team Area Ends ***** -->
 
