@@ -18,4 +18,14 @@ public class ArticleService {
         return articleMapper.findArticles();
     }
     public List<Article> getAnimation(){return articleMapper.findAniArticles();}
+
+    public List<Article> getEmoji(){return articleMapper.findEmojiArticles();}
+    public List<Article> getTop6Articles(){return articleMapper.findTop6Articles();}
+
+    public Article getArticle(int articleId){
+        return articleMapper.getArticle(articleId);
+    }
+
+
+
 }

@@ -57,10 +57,10 @@ https://templatemo.com/tm-571-hexashop
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#best">Best</a></li>
-                            <li class="scroll-to-section"><a href="#animation">Animation</a></li>
-                            <li class="scroll-to-section"><a href="#kids">Emoji</a></li>
+                            <li class="scroll-to-section"><a href="/index" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="/best">Best</a></li>
+                            <li class="scroll-to-section"><a href="/animation">Animation</a></li>
+                            <li class="scroll-to-section"><a href="/emoji">Emoji</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">My Pages</a>
                                 <ul>
@@ -207,14 +207,14 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
-                            <div class="item" th:each="e : ${info}">
+                            <div class="item" th:each="top3Article : ${top3}">
                                 <div class="thumb">
-                                    <img src="../assets/new_img/top1.gif" alt="">
+                                    <img th:src="${top3Article.thumbnail}" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4 th:text="${e.title}"></h4>
-                                    <span th:text="${e.userId}"></span><p>
-                                    <span th:text="${e.likeCount}"></span>likes
+                                    <h4 th:text="${top3Article.title}"></h4>
+                                    <span th:text="${top3Article.userId}"></span><p>
+                                    <span th:text="${top3Article.likeCount}"></span>likes
                                 </div>
                             </div>
                         </div>
@@ -226,7 +226,7 @@ https://templatemo.com/tm-571-hexashop
     </section>
     <!-- ***** Men Area Ends ***** -->
 
-    <!-- ***** Women Area Starts ***** -->
+    <!-- ***** Animation Area Starts ***** -->
     <section class="section" id="animation">
         <div class="container">
             <div class="row">
@@ -243,43 +243,24 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="women-item-carousel">
                         <div class="owl-women-item owl-carousel">
-                            <div class="item"  th:each="e : ${ani}">
+                            <div class="item"  th:each="Ani : ${aniArticle}">
                                 <div class="thumb">
-                                    <img src="../assets/new_img/ani1.gif" alt="">
+                                    <img th:src="${Ani.thumbnail}" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>Action test</h4>
-                                    <span>by Green boy</span><p>
-                                    <span>1230 likes</span>
-                                </div>
-                            </div>
-                            <div class="item" th:each="e : ${ani}">
-                                <div class="thumb">
-                                    <img src="../assets/new_img/ani2.gif" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>MY first work</h4>
-                                    <span>35 likes</span><p>
-                                    <span>by newbie</span>
-                                </div>
-                            </div>
-                            <div class="item" th:each="e : ${ani}">
-                                <div class="thumb">
-                                    <img src="../assets/new_img/ani3.gif" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Fighter</h4>
-                                    <span>by K</span><p>
-                                    <span>1.1 K likes</span>
+                                    <h4 th:text="${Ani.title}"></h4>
+                                    <span th:text="${Ani.userId}"></span><p>
+                                    <span th:text="${Ani.likeCount}"></span>likes
                                 </div>
                             </div>
                         </div>
+                        <button type="button" onclick="location.href='/animation'" style="margin-top: 10px">View more</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ***** Women Area Ends ***** -->
+    <!-- ***** Animation Area Ends ***** -->
 
     <!-- ***** Kids Area Starts ***** -->
     <section class="section" id="kids">
@@ -537,7 +518,7 @@ https://templatemo.com/tm-571-hexashop
                             <ul>
                                 <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
                                 <li>Email:<br><span>info@company.com</span></li>
-                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>,</span></li>
                             </ul>
                         </div>
                     </div>

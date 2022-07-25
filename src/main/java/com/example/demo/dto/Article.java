@@ -3,6 +3,7 @@ package com.example.demo.dto;
 import lombok.*;
 
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
@@ -17,4 +18,6 @@ public class Article {
     private String createdAt;
     private String updatedAt;
     private String deletedAt;
+
+    private String thumbnail;
 }
