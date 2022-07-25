@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     private final ArticleService articleService;
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String getMain(Model model){
         model.addAttribute("info", articleService.getArticles());
         model.addAttribute("ani", articleService.getAnimation());
