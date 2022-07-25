@@ -10,7 +10,9 @@ import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +83,11 @@ public class MainController {
     @GetMapping("/login")
     public String login(){
         return "login";
+    }
+    @GetMapping("/upload")
+    public String upload(Model model){
+        model.addAttribute("article", new Article());
+        return "upload";
     }
     @GetMapping("/mypage")
     public String mypage(){
@@ -161,6 +168,13 @@ public class MainController {
         model.addAttribute("articleImages",resultImages);
         model.addAttribute("articleInfo", info);
         return "detail";
+    }
+
+
+    @PostMapping("/uploadArticle")
+    public String updateArticle(Article article){
+        articleService.createArticle(article);
+        return "redirect:/best";
     }
 
 

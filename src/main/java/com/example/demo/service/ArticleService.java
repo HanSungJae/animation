@@ -26,6 +26,8 @@ public class ArticleService {
         return articleMapper.getArticle(articleId);
     }
 
-
+    public void createArticle(Article article){
+        articleMapper.createArticle(article);
+    }
 
 }

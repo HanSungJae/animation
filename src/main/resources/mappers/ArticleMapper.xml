@@ -19,5 +19,8 @@
     <select id="getArticle" resultType="Article">
         select * from article where id = #{articleId}
     </select>
+    <insert id="createArticle" parameterType="Article" useGeneratedKeys="true" keyProperty="id">
+        insert into article(title, description, type) values (#{title},#{description},#{type})
+    </insert>
 <!--    id, userId, files, description, type, like_count, created_at, updated_at, deleted_at-->
 </mapper>

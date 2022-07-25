@@ -18,6 +18,5 @@ public class Article {
     private String createdAt;
     private String updatedAt;
     private String deletedAt;
-
     private String thumbnail;
 }
