@@ -22,5 +22,8 @@
     <insert id="createArticle" parameterType="Article" useGeneratedKeys="true" keyProperty="id">
         insert into article(title, description, type) values (#{title},#{description},#{type})
     </insert>
+    <select id="findIdArticles" resultType="Article">
+        SELECT * FROM article where user_id = "hhants" order by like_count DESC LIMIT 6;
+    </select>
 <!--    id, userId, files, description, type, like_count, created_at, updated_at, deleted_at-->
 </mapper>

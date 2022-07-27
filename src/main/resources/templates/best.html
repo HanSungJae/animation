@@ -110,7 +110,9 @@ https://templatemo.com/tm-571-hexashop
                     <div class="right-content">
                         <ul style="float: right"><li><a href="#"><i class="fa fa-heart-o"></i></a></li></ul>
                         <h4>#1</h4>
-                        <h4 th:text="${article.title}"></h4>
+                        <a th:href="@{/article(articleId=${article.id})}">
+                            <h4 th:text="${article.title}"></h4>
+                        </a>
                         <span th:text="${article.userId}"></span>
                         <span th:text="${article.likeCount}"></span>likes
 

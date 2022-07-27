@@ -19,4 +19,6 @@ public interface ArticleMapper {
     Article getArticle(@Param("articleId") int articleId);
 
     void createArticle(Article article);
+
+    List<Article> findIdArticles();
 }

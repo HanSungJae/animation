@@ -30,4 +30,6 @@ public class ArticleService {
         articleMapper.createArticle(article);
     }
 
+    public List<Article> getIdArticle(){return articleMapper.findIdArticles();}
+
 }
