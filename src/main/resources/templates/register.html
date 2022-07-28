@@ -9,19 +9,18 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Hexashop - About Page</title>
+    <title>Hexashop - Contact Page</title>
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+      <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
 
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+      <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
-    <link rel="stylesheet" href="assets/css/lightbox.css">
+      <link rel="stylesheet" href="assets/css/lightbox.css">
 <!--
 
 TemplateMo 571 Hexashop
@@ -52,7 +51,7 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="assets/images/logo.png">
+                            <img src="../assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -60,13 +59,13 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="/">Home</a></li>
                             <li class="scroll-to-section"><a href="/best">Best</a></li>
                             <li class="scroll-to-section"><a href="/animation">Animation</a></li>
-                            <li class="scroll-to-section"><a href="/emoji" class="active">Emoji</a></li>
+                            <li class="scroll-to-section"><a href="/emoji">Emoji</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">My Pages</a>
                                 <ul>
                                     <li><a href="/mywork">My Work</a></li>
                                     <li><a href="/mylikes">My Likes</a></li>
-                                    <li><a href="/upload">Upload</a></li>
+                                    <li><a href="/upload" class="active">Upload</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -82,59 +81,93 @@ https://templatemo.com/tm-571-hexashop
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
-
-    <!-- ***** Main Banner Area End ***** -->
-
-    <!-- ***** About Area Starts ***** -->
-    <div class="about-us" style="margin-top: 170px">
+    <div class="page-heading about-page-heading" id="top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="left-image">
-                        <img th:src="${articleInfo.thumbnail}" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="right-content">
-                        <ul style="float: right"><li><a href="#"><i class="fa fa-heart-o"></i></a></li></ul>
-                        <h4 th:text="${articleInfo.getTitle()}"></h4>
-                        <span th:text="${articleInfo.getUserId()}"></span>
-                        <div style="display: flex">
-                            <p th:text="${articleInfo.getLikeCount()}"></p>
-                            <p style="padding-left: 3px">likes</p>
-                        </div>
-                        <div class="quote">
-                            <i class="fa fa-quote-left"></i><p th:text="${articleInfo.getDescription()}"></p>
-                        </div>
-                        <p th:text="${articleInfo.getCreatedAt()}"></p>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        </ul>
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>REGISTER</h2>
+                        <span>Upload your work and show others</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ***** About Area Ends ***** -->
+    <!-- ***** Main Banner Area End ***** -->
 
-    <!-- ***** Our Team Area Starts ***** -->
-    <section class="our-team">
+    <!-- ***** Contact Area Starts ***** -->
+    <div class="contact-us">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4" th:each="url : ${articleImages}">
-                    <div class="team-item">
-                        <div class="thumb">
-                            <img th:src="${url}" alt="">
-                        </div>
+
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Welcome!</h2>
+                        <span>Write down the blanks to be our family.</span>
                     </div>
+                    <!--
+                    HTTP METHOD
+
+                    GET - URL EXPOSE, SELECT
+                    POST - BODY , INSERT
+                    PUT - UPDATE
+                    DELETE - DELETED
+
+                    -->
+                    <form id="contact" action="/uploadArticle" method="post" >
+                        <div class="row"style="margin-bottom: 30px">
+                            <div class="col-lg-6">
+                                <fieldset>
+                                    <input  type="text" placeholder="Name" required="">
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 30px">
+                          <div class="col-lg-6">
+                            <fieldset>
+                              <input type="text" placeholder="ID" required="">
+                            </fieldset>
+                          </div>
+                        </div>
+                        <div class="row"style="margin-bottom: 30px">
+                          <div class="col-lg-6">
+                              <fieldset>
+                                  <input  type="text" placeholder="Password" required="">
+                              </fieldset>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 30px">
+                          <div class="col-lg-6">
+                              <fieldset>
+                                  <input  type="text" placeholder="Nickname" required="">
+                              </fieldset>
+                          </div>
+                        </div>
+                        <div class="row"style="margin-bottom: 30px">
+                            <div class="col-lg-6">
+                                <fieldset>
+                                    <input  type="text" placeholder="E-mail" required="">
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 30px">
+                          <div class="col-lg-12">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                          </div>
+                        </div>
+
+                        </div>
+                      </form>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ***** Our Team Area Ends ***** -->
+    </div>
+    <!-- ***** Contact Area Ends ***** -->
 
+    <!-- ***** Subscribe Area Starts ***** -->
+
+    <!-- ***** Subscribe Area Ends ***** -->
 
     <!-- ***** Footer Start ***** -->
     <footer>
@@ -169,8 +202,6 @@ https://templatemo.com/tm-571-hexashop
                 </div>
                 <div class="col-lg-3">
 
-
-
                 </div>
                 <div class="col-lg-12">
                     <div class="under-footer">
@@ -187,6 +218,7 @@ https://templatemo.com/tm-571-hexashop
             </div>
         </div>
     </footer>
+    
 
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
@@ -202,10 +234,10 @@ https://templatemo.com/tm-571-hexashop
     <script src="assets/js/scrollreveal.min.js"></script>
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script> 
-    <script src="assets/js/slick.js"></script> 
-    <script src="assets/js/lightbox.js"></script> 
-    <script src="assets/js/isotope.js"></script> 
+    <script src="assets/js/imgfix.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/isotope.js"></script>
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>

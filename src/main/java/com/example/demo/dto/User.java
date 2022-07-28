@@ -1,7 +1,14 @@
 package com.example.demo.dto;
 
+import lombok.*;
+
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
 public class User {
-    private int id;
+    private Long id;
     private String userId;
     private String userPw;
     private String nickname;

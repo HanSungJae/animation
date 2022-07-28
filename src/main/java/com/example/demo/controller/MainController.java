@@ -81,10 +81,6 @@ public class MainController {
         return "mylikes";
     }
 
-    @GetMapping("/login")
-    public String login(){
-        return "login";
-    }
     @GetMapping("/upload")
     public String upload(Model model){
         model.addAttribute("article", new Article());
