@@ -114,39 +114,39 @@ https://templatemo.com/tm-571-hexashop
                     DELETE - DELETED
 
                     -->
-                    <form id="contact" action="/uploadArticle" method="post" >
+                    <form id="contact" action="/doRegister" method="post" th:object="${user}">
                         <div class="row"style="margin-bottom: 30px">
                             <div class="col-lg-6">
                                 <fieldset>
-                                    <input  type="text" placeholder="Name" required="">
+                                    <input th:field="*{userName}" type="text" placeholder="Name" required="">
                                 </fieldset>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 30px">
                           <div class="col-lg-6">
                             <fieldset>
-                              <input type="text" placeholder="ID" required="">
+                              <input th:field="*{userId}" type="text" placeholder="ID" required="">
                             </fieldset>
                           </div>
                         </div>
                         <div class="row"style="margin-bottom: 30px">
                           <div class="col-lg-6">
                               <fieldset>
-                                  <input  type="text" placeholder="Password" required="">
+                                  <input th:field="*{userPw}" type="text" placeholder="Password" required="">
                               </fieldset>
                           </div>
                         </div>
                         <div class="row" style="margin-bottom: 30px">
                           <div class="col-lg-6">
                               <fieldset>
-                                  <input  type="text" placeholder="Nickname" required="">
+                                  <input th:field="*{nickname}" type="text" placeholder="Nickname" required="">
                               </fieldset>
                           </div>
                         </div>
                         <div class="row"style="margin-bottom: 30px">
                             <div class="col-lg-6">
                                 <fieldset>
-                                    <input  type="text" placeholder="E-mail" required="">
+                                    <input th:field="*{email}" type="text" placeholder="E-mail" required="">
                                 </fieldset>
                             </div>
                         </div>
@@ -154,9 +154,8 @@ https://templatemo.com/tm-571-hexashop
                           <div class="col-lg-12">
                             <fieldset>
                               <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
                           </div>
-                        </div>
-
                         </div>
                       </form>
                 </div>
