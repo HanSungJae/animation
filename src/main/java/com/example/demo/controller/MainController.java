@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -23,7 +24,10 @@ public class MainController {
     private final ArticleService articleService;
 
     @GetMapping("/")
-    public String getMain(Model model){
+    public String getMain(Model model, @RequestParam(value="userId") Optional<String> userId){
+        model.addAttribute("userId", Optional.ofNullable(userId)
+                .get().orElseGet(() -> {return "NOUSER";}));
+
         model.addAttribute("info", articleService.getArticles());
         model.addAttribute("ani", articleService.getAnimation());
         List<Article> top6 = articleService.getTop6Articles();

@@ -5,7 +5,7 @@
 <mapper namespace="com.example.demo.mapper.UserMapper">
 
     <select id="findUser" resultType="User">
-        select * from USER where user_id = #{userId} and user_pw = #{userPw};
+        select * from user where user_id = #{userId} and user_pw = #{userPw};
     </select>
     <insert id="createUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         insert into user(user_id, user_pw, nickname, user_name, email) values (#{userId},#{userPw},#{nickname},#{userName},#{email})

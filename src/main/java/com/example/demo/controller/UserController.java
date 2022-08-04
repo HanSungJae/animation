@@ -15,9 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -27,20 +29,29 @@ public class UserController {
 
 
     @GetMapping("/loginPage")
-    public String loginPage(Model model){
+    public String loginPage(Model model, @RequestParam(value="message") Optional<String> loginResult){
+
+        model.addAttribute("msg", Optional.ofNullable(loginResult)
+                .get().orElseGet(() -> {return "";}));
+
+        if (model.getAttribute("msg").equals("error")){
+            model.addAttribute("msg", "ID/PW 확인 해주세요 ");
+        }
+
+
         model.addAttribute("user", new User());
         return "login";
     }
 
 
     @GetMapping("/doLogin")
-    public String doLogin(User user){
+    public String doLogin(User user, RedirectAttributes re){
         User loginInfo = userService.getUser(user.getUserId(), user.getUserPw());
-        if(loginInfo.getUserId() == null){
-
-            System.out.println(loginInfo.getUserId());
+        if(loginInfo == null){
+            re.addAttribute("message","error");
             return "redirect:/loginPage";
         }else{
+            re.addAttribute("userId",loginInfo.getUserId());
             return "redirect:/";
         }
     }

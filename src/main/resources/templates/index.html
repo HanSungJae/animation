@@ -61,7 +61,12 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="/best">Best</a></li>
                             <li class="scroll-to-section"><a href="/animation">Animation</a></li>
                             <li class="scroll-to-section"><a href="/emoji">Emoji</a></li>
-                            <li class="submenu">
+
+                           <li th:if="${userId.toString().equals('NOUSER')}"  class="submenu">
+                               <li class="scroll-to-section"><a href="/loginPage">Login</a></li>
+                           </li>
+
+                            <li th:if="!${userId.toString().equals('NOUSER')}"   class="submenu">
                                 <a href="javascript:;">My Pages</a>
                                 <ul>
                                     <li><a href="/mywork">My Work</a></li>
@@ -69,6 +74,7 @@ https://templatemo.com/tm-571-hexashop
                                     <li><a href="/upload">Upload</a></li>
                                 </ul>
                             </li>
+
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
